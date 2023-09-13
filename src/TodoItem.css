@@ -1,0 +1,69 @@
+li{
+  list-style: none;
+  text-align: start;
+  display: flex;
+  width: 95%;
+  box-shadow: 8px 8px 10px -4px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  border: 1px solid  rgba(0,0,0,0.1);
+  background: rgba(255,255,255,1);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+li div{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* The container */
+.Task{
+  padding-right: 10px;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+
+/* Hide the browser's default radio button */
+
+.container input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+/* Create a custom radio button */
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 2px solid rgba(235,186,86,1);
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+  background-color: rgba(235,186,86,1);
+}
+
+
+/* When the radio button is checked, add a blue background */
+.container input:checked~.checkmark {
+  background-color: rgba(241,134,177,1);
+  border: 2px solid rgba(241,134,177,1);
+}
+

@@ -1,6 +1,14 @@
+import { FaSearch} from 'react-icons/fa';
+import './TodoSearch.css';
+
 function TodoSearch() {
   return (
-    <input placeholder="Cortar cebolla"/>
+    <>
+      <div className='search'>
+        <input id="itemTask" placeholder="Search..."/>
+        <FaSearch style={{cursor: 'pointer'}}/>
+      </div>
+    </>
   );
 }
 

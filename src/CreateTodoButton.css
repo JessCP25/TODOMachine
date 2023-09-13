@@ -1,0 +1,9 @@
+.btnAdd{
+  border: none;
+  background-color: rgba(241,134,177,1);
+  padding: 15px;
+  border-radius: 50%;
+  align-self: flex-end;
+  position: sticky;
+  bottom: 20px;
+}

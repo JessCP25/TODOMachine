@@ -2,7 +2,10 @@ import './TodoCounter.css';
 
 function TodoCounter({total, completed}) {
   return (
-    <h1>Has completado {completed} de {total} TODOs.</h1>
+    <>
+      <h1>YOUR TASKS</h1>
+      <h2>Completed {completed} to {total}.</h2>
+    </>
   );
 }
 

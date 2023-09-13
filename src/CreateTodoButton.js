@@ -1,6 +1,9 @@
+import {FaPlus} from 'react-icons/fa';
+import './CreateTodoButton.css';
+
 function CreateTodoButton(){
   return (
-    <button>+</button>
+    <button className='btnAdd'><FaPlus style={{fontSize: '24px'}}/></button>
   );
 }
 
