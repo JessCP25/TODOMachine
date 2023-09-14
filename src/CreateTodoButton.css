@@ -4,6 +4,13 @@
   padding: 15px;
   border-radius: 50%;
   align-self: flex-end;
-  position: sticky;
-  bottom: 20px;
+  position: fixed;
+  bottom: 55px;
+  cursor: pointer;
+
+  transform: rotate(0);
+  transition: .3s ease;
+}
+.btnAdd:hover{
+  transform: rotate(224deg);
 }

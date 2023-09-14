@@ -1,17 +1,21 @@
 import { FaXmark } from 'react-icons/fa6';
 import './TodoItem.css';
 
-function TodoItem({text, completed}) {
+function TodoItem({text, completed, onComplete, onDelete}) {
   return (
-    <li>
+    <li className={`itemTask ${completed&&"item--active"}`}>
       <div className='Task'>
-      <label class="container">
+      <label className="containerCheck">
         <input type="radio" className="radio"/>
-        <span className="checkmark"></span>
+        <span className={`checkmark ${completed&&"checkmark--active"}`}
+          onClick={onComplete}
+        ></span>
       </label>
-        <p>{text}</p>
+        <p className={`todoItem__p ${completed&&"todoItem__p--complete"}`}>{text}</p>
       </div>
-      <FaXmark style={{fontSize: '22px', cursor: 'pointer'}}/>
+      <FaXmark style={{fontSize: '22px', cursor: 'pointer'}}
+        onClick={onDelete}
+      />
     </li>
   );
 }

@@ -3,7 +3,9 @@ import './CreateTodoButton.css';
 
 function CreateTodoButton(){
   return (
-    <button className='btnAdd'><FaPlus style={{fontSize: '24px'}}/></button>
+    <button className='btnAdd'
+      onClick={()=>console.log('agregaste una tarea')}
+    ><FaPlus style={{fontSize: '24px'}}/></button>
   );
 }
 

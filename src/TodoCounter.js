@@ -4,7 +4,7 @@ function TodoCounter({total, completed}) {
   return (
     <>
       <h1>YOUR TASKS</h1>
-      <h2>Completed {completed} to {total}.</h2>
+      <h2>Completed <span>{completed}</span> to <span>{total}</span>.</h2>
     </>
   );
 }

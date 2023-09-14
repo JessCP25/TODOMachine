@@ -1,4 +1,4 @@
-li{
+.itemTask{
   list-style: none;
   text-align: start;
   display: flex;
@@ -11,7 +11,7 @@ li{
   justify-content: space-between;
   padding: 0 10px;
 }
-li div{
+.itemTask div{
   display: flex;
   gap: 10px;
   align-items: center;
@@ -21,7 +21,7 @@ li div{
 .Task{
   padding-right: 10px;
 }
-.container {
+.containerCheck {
   display: block;
   position: relative;
   padding-left: 30px;
@@ -33,7 +33,7 @@ li div{
 
 /* Hide the browser's default radio button */
 
-.container input[type=radio] {
+.containerCheck input[type=radio] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -56,14 +56,24 @@ li div{
 
 /* On mouse-over, add a grey background color */
 
-.container:hover input~.checkmark {
+.containerCheck:hover input~.checkmark {
   background-color: rgba(235,186,86,1);
 }
-
-
-/* When the radio button is checked, add a blue background */
-.container input:checked~.checkmark {
+.checkmark--active {
   background-color: rgba(241,134,177,1);
   border: 2px solid rgba(241,134,177,1);
 }
 
+/* .containerCheck input:checked~.checkmark {
+  background-color: rgba(241,134,177,1);
+  border: 2px solid rgba(241,134,177,1);
+} */
+
+.todoItem__p--complete{
+  text-decoration: line-through;
+}
+
+.item--active{
+  opacity: 0.3;
+
+}
