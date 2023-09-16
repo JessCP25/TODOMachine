@@ -1,10 +1,6 @@
 import React from 'react';
-import {TodoCounter} from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
-
+import { useLocalStorage } from './useLocalStorage';
+import { AppUI } from './AppUI';
 // const defaultTodos = [
 //   {text: 'Cortar cebolla', completed: true},
 //   {text: 'Tomar el Curso de Intro a React.js', completed:false},
@@ -13,17 +9,8 @@ import { CreateTodoButton } from './CreateTodoButton';
 // ];
 
 function App() {
-  const localStorageTodos = localStorage.getItem('TODOS_V1');
-  let parsedTodos;
 
-  if(!localStorageTodos){
-    localStorage.setItem('TODOS_V1', JSON.stringify([]));
-    parsedTodos = [];
-  }else{
-    parsedTodos = JSON.parse(localStorageTodos);
-  }
-
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1',[]);
   const completedTodos = todos.filter(todo=>!!todo.completed).length;
   const totalTodos = todos.length;
 
@@ -39,11 +26,6 @@ function App() {
     return todoText.includes(searchText);
   })
 
-  const saveTodos = (newTodos)=>{
-    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
-    setTodos(newTodos);
-  }
-
   const completeTodo = (text) =>{
     const newTodos = [...todos];
     const indexTodo = newTodos.findIndex(todo=>todo.text===text);
@@ -57,26 +39,15 @@ function App() {
     saveTodos(newTodos);
   }
 
-  return (
-    <>
-      <TodoCounter completed={completedTodos} total={totalTodos}/>
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <TodoList>
-        {searchTodos.map(todo => (
-          <TodoItem key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete = {()=>completeTodo(todo.text)}
-            onDelete = {()=>deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton/>
-    </>
-  );
+  return <AppUI
+    completedTodos={completedTodos}
+    searchValue={searchValue}
+    setSearchValue={setSearchValue}
+    totalTodos={totalTodos}
+    completeTodo={completeTodo}
+    deleteTodo={deleteTodo}
+    searchTodos={searchTodos}
+  />;
 }
 
 export default App;
