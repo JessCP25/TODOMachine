@@ -1,0 +1,54 @@
+.loading{
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  /* animation: loader 2s linear forwards; */
+}
+.loading__child{
+  width: 21px;
+  height: 21px;
+  background: rgba(241,134,177,1);
+  border-radius: 50%;
+  margin: 10px;
+  animation: scaling 2s ease-in-out infinite;
+}
+
+.loading__child:nth-child(1){
+  animation-delay: 0.2s;
+}
+.loading__child:nth-child(2){
+  animation-delay: 0.4s;
+}
+.loading__child:nth-child(3){
+  animation-delay: 0.6s;
+}
+
+/* @keyframes loader{
+  0%{
+    opacity: 1;
+    visibility: visible;
+  }
+  95%{
+    opacity: 1;
+    visibility: visible;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+} */
+
+@keyframes scaling{
+  0%, 100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(0.2);
+  }
+}
