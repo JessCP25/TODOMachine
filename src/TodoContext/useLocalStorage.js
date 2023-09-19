@@ -28,7 +28,7 @@ function useLocalStorage(itemName, initialValue){
       }
     },2000);
 
-  },[]);
+  });
   
   const saveItem = (newItem)=>{
     localStorage.setItem(itemName, JSON.stringify(newItem));
@@ -39,3 +39,11 @@ function useLocalStorage(itemName, initialValue){
 }
 
 export { useLocalStorage};
+
+
+// const defaultTodos = [
+//   {text: 'Cortar cebolla', completed: true},
+//   {text: 'Tomar el Curso de Intro a React.js', completed:false},
+//   {text: 'Llorar con la Llorona', completed: false},
+//   {text: 'Ver una pelicula', completed:true}
+// ];

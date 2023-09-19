@@ -1,7 +1,6 @@
-import React from "react";
 
 function EmptyTodos() {
-  return 'empty';
+  return 'Add a new task...';
 }
 
 export {EmptyTodos};
